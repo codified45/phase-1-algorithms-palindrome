@@ -1,6 +1,16 @@
 function isPalindrome(word) {
   // Write your algorithm here
-}
+  let isPalindrome = false;
+  let ltrArray = [...word];
+  let ltrReversed = [];
+  for (const letter of ltrArray) {
+    ltrReversed.unshift(letter);
+  };
+  if (ltrArray.toString() === ltrReversed.toString()) {
+    isPalindrome = true;
+  };
+  return isPalindrome;
+};
 
 /* 
   Add your pseudocode here
@@ -20,6 +30,16 @@ if (require.main === module) {
 
   console.log("Expecting: false");
   console.log("=>", isPalindrome("robot"));
-}
+
+  console.log("");
+
+  console.log("Expecting: true");
+  console.log("=>", isPalindrome("kayak"));
+
+  console.log("");
+
+  console.log("Expecting: false");
+  console.log("=>", isPalindrome("bait"));
+};
 
 module.exports = isPalindrome;
